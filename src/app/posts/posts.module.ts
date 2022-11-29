@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { PostsRoutingModule } from './posts-routing.module';
-import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { PostsListComponent } from './pages/posts-list/posts-list.component';
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { PostToolbarComponent } from './components/post-toolbar/post-toolbar.component';
 
