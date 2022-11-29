@@ -4,7 +4,10 @@
     <mat-card-subtitle>{{ post.author }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
-    <button mat-icon-button color="accent" (click)="delete()">
+    <button mat-icon-button color="accent">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="delete()">
       <mat-icon>delete</mat-icon>
     </button>
   </mat-card-actions>
