@@ -1,8 +1,9 @@
+<app-post-toolbar (add)="addNew()"></app-post-toolbar>
 <div class="list" *ngIf="posts$ | async as posts; else loading">
   <div class="card" *ngFor="let post of posts">
     <app-post-card [post]="post" (deletePost)="deletePost($event)">
     </app-post-card>
   </div>
 </div>
-<button (click)="addNew()">new</button>
+<!-- <button (click)="addNew()">new</button> -->
 <ng-template #loading>Loading...</ng-template>
