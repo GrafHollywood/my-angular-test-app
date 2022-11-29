@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http"
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { IPost } from '../interfaces/post';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostsApiService {
-  private httpBase = 'http://localhost:3000/posts'
-  constructor(private http: HttpClient) { }
+  private httpBase = 'http://localhost:3000/posts';
+  constructor(private http: HttpClient) {}
 
   getPosts(): Observable<IPost[]> {
     return this.http.get<IPost[]>(this.httpBase);
@@ -17,6 +17,6 @@ export class PostsApiService {
     return this.http.post<IPost>(this.httpBase, post);
   }
   deletePost(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.httpBase}/${id}`)
+    return this.http.delete<void>(`${this.httpBase}/${id}`);
   }
 }

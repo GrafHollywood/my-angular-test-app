@@ -1,11 +1,1 @@
-<ng-container *ngIf="posts$ | async as posts; else loading">
-  <ul>
-    <li *ngFor="let post of posts" class="card">
-      <div>{{post.title}}</div>
-      <div>{{post.author}}</div>
-      <button (click)="deletePost(post.id)">delete</button>
-    </li>
-  </ul>
-  <button (click)="addNew()">new</button>
-</ng-container>
-<ng-template #loading>Loading...</ng-template>
+<router-outlet></router-outlet>
