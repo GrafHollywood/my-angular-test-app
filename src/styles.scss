@@ -11,15 +11,49 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$my-angular-test-app-primary: mat.define-palette(mat.$indigo-palette);
-$my-angular-test-app-accent: mat.define-palette(
-  mat.$pink-palette,
-  A200,
-  A100,
-  A400
+
+$primary-palette: (
+  50: #e2f1fc,
+  100: #b9dcf8,
+  200: #8cc7f4,
+  300: #5eb0ef,
+  400: #38a0ed,
+  500: #0090ea,
+  600: #0083dc,
+  700: #0071ca,
+  800: #0060b8,
+  900: #004399,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+  ),
 );
 
-// The warn palette is optional (defaults to red).
+$accent-palette: (
+  50: #e0f5ff,
+  100: #b1e5ff,
+  200: #7cd4ff,
+  300: #40c3ff,
+  400: #00b5ff,
+  500: #00a8fd,
+  600: #009aee,
+  700: #0087d9,
+  800: #0075c5,
+  900: #0055a2,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+  ),
+);
+
+$my-angular-test-app-primary: mat.define-palette($primary-palette, 500);
+$my-angular-test-app-accent: mat.define-palette($accent-palette, 300);
 $my-angular-test-app-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
@@ -38,8 +72,6 @@ $my-angular-test-app-theme: mat.define-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($my-angular-test-app-theme);
-
-/* You can add global styles to this file, and also import other style files */
 
 html,
 body {
