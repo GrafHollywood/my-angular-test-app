@@ -23,17 +23,6 @@ export class PostsListComponent implements OnInit {
       .subscribe((posts) => this.posts$.next(posts));
   }
 
-  addNew() {
-    const post = {
-      title: (Math.random() * 10000).toString(),
-      author: 'angular',
-    };
-    this.postsApiService.postPost(post).subscribe((newPost) => {
-      const oldPosts = this.posts$.getValue() ?? [];
-      this.posts$.next([...oldPosts, newPost]);
-    });
-  }
-
   deletePost(id: string) {
     this.postsApiService.deletePost(id).subscribe(() => {
       const oldPosts = this.posts$.getValue() ?? [];
