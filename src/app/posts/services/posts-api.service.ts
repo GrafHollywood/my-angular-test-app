@@ -13,6 +13,9 @@ export class PostsApiService {
   getPosts(): Observable<IPost[]> {
     return this.http.get<IPost[]>(this.httpBase);
   }
+  getPostById(id: string): Observable<IPost> {
+    return this.http.get<IPost>(`${this.httpBase}/${id}`);
+  }
   postPost(post: Omit<IPost, 'id'>): Observable<IPost> {
     return this.http.post<IPost>(this.httpBase, post);
   }

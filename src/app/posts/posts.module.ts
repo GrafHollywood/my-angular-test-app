@@ -14,6 +14,8 @@ import { PostCardComponent } from './components/post-card/post-card.component';
 import { PostToolbarComponent } from './components/post-toolbar/post-toolbar.component';
 import { NewPostComponent } from './pages/new-post/new-post.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
+import { PostPageComponent } from './pages/post-page/post-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { PostFormComponent } from './components/post-form/post-form.component';
     PostToolbarComponent,
     NewPostComponent,
     PostFormComponent,
+    PostPageComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     PostsRoutingModule,
+    SharedModule,
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,

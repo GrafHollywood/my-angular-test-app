@@ -1,0 +1,9 @@
+<div class="container">
+  <ng-container *ngIf="post$ | async as post; else loading">
+    <h1>{{ post.title }}</h1>
+    <span>Author: {{ post.author }}</span>
+    <span>Create at: {{ post.dateCreate | date: "dd.MM.yyyy" }}</span>
+    <p [innerHTML]="post.article | markdown"></p>
+  </ng-container>
+  <ng-template #loading>Loading...</ng-template>
+</div>
